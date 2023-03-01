@@ -11,13 +11,13 @@ public class RedesController {
 		super();
 	 
  }
-     // Retorna o S.O que est· na m·quina 
+     // Retorna o S.O que est√° na m√°quina 
  	private String os() {
 	 String os = System.getProperty("os.name");
 	 return os;
  }
  	public void  readProcess () {
- 		// ver se È Windowns 
+ 		// ver se √© Windowns 
  		if(os().contains("Windows")) {
  		try {
 		 Process p = Runtime.getRuntime().exec("IPCONFIG");
@@ -47,7 +47,7 @@ public class RedesController {
  		}
  		else if(os().contains("Linux")) {
  				try {
- 					Process p = Runtime.getRuntime().exec("IFCONFIG");
+ 					Process p = Runtime.getRuntime().exec("ifconfig");
  					InputStream fluxo = p.getInputStream();
  					InputStreamReader leitor= new InputStreamReader(fluxo);
  					BufferedReader buffer= new BufferedReader(leitor);
@@ -92,13 +92,13 @@ public class RedesController {
 				fluxo.close();
 				
 				if (os().contains("Windows")) {
-					JOptionPane.showMessageDialog(null, "MÈdia = " + linha2.split(" = ")[3]);
+					JOptionPane.showMessageDialog(null, "M√©dia = " + linha2.split(" = ")[3]);
 				}
 		
 				
 			}		
 			 catch (IOException e) {
-				JOptionPane.showMessageDialog(null, "Erro de conectividade ao endereÁo solicitado", "Error",JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Erro de conectividade ao endere√ßo solicitado", "Error",JOptionPane.ERROR_MESSAGE);
 				e.printStackTrace();
 			}
 		
@@ -123,11 +123,11 @@ public class RedesController {
 		 			fluxo.close();
 		 			
 		 			if (os().contains("Linux")) {
-						JOptionPane.showMessageDialog(null, "MÈdia = " + linha2.split("/")[4]+"ms");
+						JOptionPane.showMessageDialog(null, "M√©dia = " + linha2.split("/")[4]+"ms");
 					}
 		 			
 				} catch (IOException e) {
-					JOptionPane.showMessageDialog(null, "Erro de conectividade ao endereÁo solicitado", "Error",JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Erro de conectividade ao endere√ßo solicitado", "Error",JOptionPane.ERROR_MESSAGE);
 					e.printStackTrace();
 				}
 			}
