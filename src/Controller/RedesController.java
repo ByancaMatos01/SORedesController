@@ -57,7 +57,7 @@ public class RedesController {
  							System.out.println(linha);
  						}
  						if(linha.contains("inet") && !linha.contains("inet6")) {
- 							System.out.println(linha.split("netmask")[0]);
+ 							System.out.println(linha.split("netmask")[3]);
  						}
  					}
  						
